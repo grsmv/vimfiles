@@ -28,6 +28,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'snipMate'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'AutoComplPop'
 
 " Ruby goodies
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -38,7 +39,7 @@ Bundle 'skwp/vim-spec-finder'
 " JavaScript goodies
 Bundle 'mklabs/vim-backbone'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'hallettj/jslint.vim'
+Bundle 'jelera/vim-javascript-syntax'
 
 " Lisp goodies
 Bundle 'vim-scripts/slimv.vim'
@@ -134,6 +135,9 @@ highlight clear SignColumn
 
 " Enabling syntastic
 let g:syntastic_enable_signs=1
+
+" Remapping Conque toggle key
+let g:ConqueTerm_ToggleKey = '<F10>'
 
 " Setting undo-options
 if version >= 700
@@ -321,8 +325,8 @@ if executable('coffeetags')
 endif
 
 " TagBar support for Javascript
-let g:tagbar_type_javascript = {
-    \ 'ctagsbin' : '/usr/local/bin/jsctags'
-\ }
+" let g:tagbar_type_javascript = {
+"     \ 'ctagsbin' : '/usr/local/bin/jsctags'
+" \ }
 
 filetype plugin indent on
