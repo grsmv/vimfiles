@@ -8,24 +8,24 @@ filetype off
 " Vundle and custom paths inclusion
 set rtp+=~/.vim/bundle/vundle/
 set rtp+=~/.vim/personal
+set rtp+=~/.vim/conque/
 call vundle#rc()
 
 " Tools of common awesomeness
 Bundle 'LanguageTool'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'scrooloose/syntastic'
-Bundle 'snipMate'
-Bundle 'vim-scripts/Conque-Shell'
-Bundle 'vim-scripts/conque-repl.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'airblade/vim-gitgutter'
 Bundle 'sjl/gundo.vim'
+Bundle 'snipMate'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/taglist.vim'
 
@@ -38,17 +38,20 @@ Bundle 'skwp/vim-spec-finder'
 " JavaScript goodies
 Bundle 'mklabs/vim-backbone'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'hallettj/jslint.vim'
 
 " Lisp goodies
 Bundle 'vim-scripts/slimv.vim'
 Bundle 'vim-scripts/VimClojure'
 
 " Haskell goodies
+Bundle 'Shougo/vimproc.vim'
+Bundle 'bitc/lushtags'
 Bundle 'dag/vim2hs'
 Bundle 'eagletmt/ghcmod-vim'
-Bundle 'wlangstroth/vim-haskell'
-Bundle 'ujihisa/neco-ghc'
 Bundle 'haskell.vim'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'wlangstroth/vim-haskell'
 
 " Golang goodies
 Bundle 'jnwhiteh/vim-golang'
