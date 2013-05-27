@@ -15,6 +15,7 @@ call vundle#rc()
 Bundle 'LanguageTool'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'ayang/AutoComplPop'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
@@ -28,9 +29,9 @@ Bundle 'sjl/gundo.vim'
 Bundle 'snipMate'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'AutoComplPop'
 
 " Ruby goodies
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'skwp/vim-ruby-conque'
 Bundle 'tpope/vim-rails'
@@ -138,6 +139,9 @@ let g:syntastic_enable_signs=1
 
 " Remapping Conque toggle key
 let g:ConqueTerm_ToggleKey = '<F10>'
+
+" Enabling auto-popup for SnipMate sugestions
+let g:acp_behaviorSnipmateLength=1
 
 " Setting undo-options
 if version >= 700
