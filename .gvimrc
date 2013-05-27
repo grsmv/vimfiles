@@ -10,32 +10,38 @@ set rtp+=~/.vim/bundle/vundle/
 set rtp+=~/.vim/personal
 call vundle#rc()
 
-" List of plugins to include
+" Tools of common awesomeness
 Bundle 'LanguageTool'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'gmarik/vundle'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'scrooloose/syntastic'
-Bundle 'skwp/vim-ruby-conque'
 Bundle 'snipMate'
-Bundle 'tpope/vim-rails'
 Bundle 'vim-scripts/Conque-Shell'
-Bundle 'vim-scripts/VimClojure'
 Bundle 'vim-scripts/conque-repl.vim'
-Bundle 'vim-scripts/slimv.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'mklabs/vim-backbone'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'sjl/gundo.vim'
-Bundle 'skwp/vim-spec-finder'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/taglist.vim'
+
+" Ruby goodies
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'skwp/vim-ruby-conque'
+Bundle 'tpope/vim-rails'
+Bundle 'skwp/vim-spec-finder'
+
+" JavaScript goodies
+Bundle 'mklabs/vim-backbone'
+Bundle 'kchmck/vim-coffee-script'
+
+" Lisp goodies
+Bundle 'vim-scripts/slimv.vim'
+Bundle 'vim-scripts/VimClojure'
 
 " Haskell goodies
 Bundle 'dag/vim2hs'
