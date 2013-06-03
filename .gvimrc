@@ -35,6 +35,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'skwp/vim-ruby-conque'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
 Bundle 'skwp/vim-spec-finder'
 
 " JavaScript goodies
@@ -332,5 +334,15 @@ endif
 " let g:tagbar_type_javascript = {
 "     \ 'ctagsbin' : '/usr/local/bin/jsctags'
 " \ }
+
+" Golint implementation
+" To use it follow next steps:
+"   $ git clone git://github.com/golang/lint.git
+"   $ cd golint && go install
+function! s:GoLint()
+  cexpr system("golint " . shellescape(expand('%')))
+  copen
+endfunction
+command! GoLint :call s:GoLint()
 
 filetype plugin indent on
