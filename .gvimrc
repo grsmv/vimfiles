@@ -25,6 +25,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'skammer/vim-css-color'
 Bundle 'snipMate'
 Bundle 'tComment'
 Bundle 'tpope/vim-surround'
@@ -83,7 +84,6 @@ set autoindent
 set smartindent
 
 " Wildmenu
-" set wildmode=longest,list,full
 set wildmenu
 
 set backspace=indent,eol,start
@@ -95,11 +95,6 @@ set expandtab
 
 " Do not unload buffer when switching to another one
 set hidden
-
-" Search mode helpers
-set hlsearch
-set iminsert=0
-set imsearch=0
 
 " Enable mouse
 set mouse=a
@@ -132,6 +127,25 @@ set list
 " Ctags hint
 " READ: https://github.com/majutsushi/tagbar/wiki
 set tags=tags
+
+" Better search options
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set showmatch
+set hlsearch
+set iminsert=0
+set imsearch=0
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Make ; do same things as :
+nnoremap ; :
+
+" Savimg file on Focus lost
+au FocusLost * :wa
 
 " vim-gitgutter view impreved
 highlight clear SignColumn
