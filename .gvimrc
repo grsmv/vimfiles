@@ -11,6 +11,8 @@ set rtp+=~/.vim/personal
 set rtp+=~/.vim/conque/
 call vundle#rc()
 
+Bundle 'grsmv/sequencel.vim'
+
 " Tools of common awesomeness
 Bundle 'LanguageTool'
 Bundle 'Lokaltog/vim-powerline'
@@ -56,6 +58,7 @@ Bundle 'bitc/lushtags'
 Bundle 'dag/vim2hs'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'haskell.vim'
+Bundle 'hspec/hspec.vim'
 Bundle 'ujihisa/neco-ghc'
 Bundle 'wlangstroth/vim-haskell'
 
@@ -148,6 +151,11 @@ nnoremap ; :
 " Savimg file on Focus lost
 au FocusLost * :wa
 
+" Hspec color customization
+highlight link hspecDescribe Type
+highlight link hspecIt Identifier
+highlight link hspecDescription Comment
+
 " vim-gitgutter view impreved
 highlight clear SignColumn
 
@@ -200,8 +208,14 @@ let vimclojure#WantNailgun = 1
 " Full path to the nailgun client
 let vimclojure#NailgunClient = "/Users/sergey/bin/ng"
 
+
 " LangugeTool integration
 let g:languagetool_jar='/Users/sergey/Library/LanguageTool/languagetool-commandline.jar'
+
+
+" SeqeunceL plugin settings
+let g:sequencel_interpreter_path = "/Users/sergey/Work/Code/SoftServe/TMT/sequenceL/sl/sli"
+
 
 " Ruby-related settings
 " ---------------------
