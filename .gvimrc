@@ -11,8 +11,6 @@ set rtp+=~/.vim/personal
 set rtp+=~/.vim/conque/
 call vundle#rc()
 
-Bundle 'grsmv/sequencel.vim'
-
 " Tools of common awesomeness
 Bundle 'LanguageTool'
 Bundle 'Lokaltog/vim-powerline'
@@ -23,6 +21,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
+Bundle 'scratch.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'scrooloose/syntastic'
@@ -32,7 +31,6 @@ Bundle 'snipMate'
 Bundle 'tComment'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'scratch.vim'
 
 " Ruby goodies
 Bundle 'vim-ruby/vim-ruby'
@@ -65,6 +63,9 @@ Bundle 'wlangstroth/vim-haskell'
 " Golang goodies
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'fsouza/go.vim'
+
+" SequenceL goodie
+Bundle 'grsmv/sequencel.vim'
 
 " Look and feel
 colorscheme mustang
@@ -149,7 +150,7 @@ vnoremap <tab> %
 nnoremap ; :
 
 " Savimg file on Focus lost
-au FocusLost * :wa
+" au FocusLost * :wa
 
 " Hspec color customization
 highlight link hspecDescribe Type
