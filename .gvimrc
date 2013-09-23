@@ -52,6 +52,7 @@ Bundle 'vim-scripts/VimClojure'
 
 " Haskell goodies
 Bundle 'Shougo/vimproc.vim'
+Bundle 'Twinside/vim-haskellConceal'
 Bundle 'bitc/lushtags'
 Bundle 'dag/vim2hs'
 Bundle 'eagletmt/ghcmod-vim'
@@ -75,6 +76,9 @@ set guioptions='e'
 set guitablabel=%t
 set nonumber
 set wrap!
+
+" Change working directory to file's one
+set autochdir
 
 " left margin for code aesthetics
 set foldcolumn=1
