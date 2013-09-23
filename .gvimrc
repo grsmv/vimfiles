@@ -31,6 +31,7 @@ Bundle 'snipMate'
 Bundle 'tComment'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'Raimondi/delimitMate'
 
 " Ruby goodies
 Bundle 'vim-ruby/vim-ruby'
