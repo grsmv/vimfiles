@@ -53,7 +53,7 @@ Bundle 'vim-scripts/VimClojure'
 
 " Haskell goodies
 Bundle 'Shougo/vimproc.vim'
-Bundle 'Twinside/vim-haskellConceal'
+" Bundle 'Twinside/vim-haskellConceal'
 Bundle 'bitc/lushtags'
 Bundle 'dag/vim2hs'
 Bundle 'eagletmt/ghcmod-vim'
@@ -98,6 +98,9 @@ set wildmenu
 
 set backspace=indent,eol,start
 set clipboard=unnamed
+
+" Automatically reload changed files
+set autoread
 
 " Turn TAB-work to a normal mode
 set smarttab
