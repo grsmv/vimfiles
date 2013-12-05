@@ -32,6 +32,7 @@ Bundle 'tComment'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'Raimondi/delimitMate'
+Bundle 'bilalq/lite-dfm'
 
 " Ruby goodies
 Bundle 'vim-ruby/vim-ruby'
