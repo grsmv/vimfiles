@@ -12,7 +12,6 @@ set rtp+=~/.vim/conque/
 call vundle#rc()
 
 " Tools of common awesomeness
-Bundle 'LanguageTool'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'ayang/AutoComplPop'
@@ -20,8 +19,6 @@ Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'mattn/zencoding-vim'
-Bundle 'scratch.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'scrooloose/syntastic'
@@ -30,49 +27,28 @@ Bundle 'skammer/vim-css-color'
 Bundle 'snipMate'
 Bundle 'tComment'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'bilalq/lite-dfm'
 
 " Ruby goodies
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'skwp/vim-ruby-conque'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-bundler'
-Bundle 'skwp/vim-spec-finder'
 
 " JavaScript goodies
-Bundle 'mklabs/vim-backbone'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'jelera/vim-javascript-syntax'
 
-" Lisp goodies
-Bundle 'vim-scripts/slimv.vim'
-Bundle 'vim-scripts/VimClojure'
-
 " Haskell goodies
-Bundle 'Shougo/vimproc.vim'
-" Bundle 'Twinside/vim-haskellConceal'
-Bundle 'bitc/lushtags'
 Bundle 'dag/vim2hs'
-Bundle 'eagletmt/ghcmod-vim'
 Bundle 'haskell.vim'
 Bundle 'hspec/hspec.vim'
-Bundle 'ujihisa/neco-ghc'
 Bundle 'wlangstroth/vim-haskell'
 
 " Golang goodies
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'fsouza/go.vim'
 
-" SequenceL goodie
-Bundle 'grsmv/sequencel.vim'
-
 " Look and feel
 colorscheme mustang
-set guifont=Monaco:h12
+set guifont=Monaco:h10
 set linespace=4
 set guioptions='e'
 set guitablabel=%t
@@ -158,14 +134,6 @@ vnoremap <tab> %
 " Make ; do same things as :
 nnoremap ; :
 
-" Savimg file on Focus lost
-" au FocusLost * :wa
-
-" Hspec color customization
-highlight link hspecDescribe Type
-highlight link hspecIt Identifier
-highlight link hspecDescription Comment
-
 " vim-gitgutter view impreved
 highlight clear SignColumn
 
@@ -186,64 +154,8 @@ if version >= 700
   set undoreload=5000
 endif
 
-" Enabling paredit for not only for Lisp
-au BufNewFile,BufRead *.lisp call PareditInitBuffer()
-
 " Settings for git commit message
 autocmd Filetype gitcommit setlocal spell textwidth=72
-
-
-" Clojure-related settings
-" ------------------------
-" Automatically determine indenting using fuzzy matching. e.g. the a line 
-" starting "(with-" will be indented two spaces.
-let vimclojure#FuzzyIndent=1
-
-" Highlight built-in functions from clojure.core and friends
-let vimclojure#HighlightBuiltins=1
-
-" Highlight functions from contrib
-let vimclojure#HighlightContrib=1
-
-" As new symbols are identified using VimClojure's dynamic features, 
-" automatically highlight them.
-let vimclojure#DynamicHighlighting=1
-
-" Color parens so they're easier to match visually
-let vimclojure#ParenRainbow=1
-
-" Yes, I want nailgun support
-let vimclojure#WantNailgun = 1
-
-" Full path to the nailgun client
-let vimclojure#NailgunClient = "/Users/sergey/bin/ng"
-
-
-" LangugeTool integration
-let g:languagetool_jar='/Users/sergey/Library/LanguageTool/languagetool-commandline.jar'
-
-
-" SeqeunceL plugin settings
-let g:sequencel_interpreter_path = "/Users/sergey/Work/Code/SoftServe/TMT/sequenceL/sl/sli"
-
-
-" Ruby-related settings
-" ---------------------
-
-" Ruby code completion
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails=1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-
-
-" Folding
-" set foldenable
-" set foldmethod=syntax
-" set foldcolumn=6
-
-" Russian language support  
-"set keymap=russian-jcukenwin
 
 " Turning OFF Replace mode
 imap <Ins> <Esc>wq
@@ -253,135 +165,7 @@ let g:user_zen_expondabbr_key = '<D-e>'
 
 highlight lCursor guifg=NONE guibg=Red
 
-" More suitable mapping
-function SMap(key, action, ...)
-    let modes = " vi"
-    if (a:0 > 0)
-        let modes = a:{1}
-    endif
-    if (match(modes, '\Ii') != -1)
-        execute 'imap ' . a:key . ' <Esc>' . a:action
-    endif
-    if (match(modes, '\Nn') != -1)
-        execute 'nmap ' . a:key . ' <Esc>' . a:action
-    endif
-    if (match(modes, ' ') != -1)
-        execute 'map ' . a:key . ' <Esc>' . a:action
-    endif
-    if (match(modes, '\Vv') != -1)
-        execute 'vmap ' . a:key . ' <Esc>' . a:action
-    endif
-endfunction
-
-" Quick save
-call SMap("<F2>", ":w<cr>")
-
-" NerdTree toggle
-call SMap("<F3>", ":NERDTreeToggle<cr>")
-
-" JSLint checking
-call SMap("<F4>", ":w<CR>:make<CR>:cw<CR>")
-
-" Show buffers
-call SMap("<F5>", ":ls<cr>:b")
-
-" Prev buffer
-call SMap("<F6>", ":bp<cr>")
-
-" Next buffer
-call SMap("<F7>", ":bn<cr>")
-
-" Tagbar  toggle
-call SMap("<F8>", ":TagbarToggle<cr>")
-
-" Gundo toggle
-call SMap("<F9>", ":GundoToggle<cr>")
-
-" C-T - new tab
-call SMap("<C-t>", ":tabnew<cr>")
-
-" Ctrl + tab - next tab
-call SMap("<S-tab>", ":tabnext<cr>")
-
 " associating .go files with Go syntax
 au BufNewFile,BufRead *.go setf go
-
-" FuzzyFinder setup
-function IdeFindTextMate()
-  let g:FuzzyFinderOptions.Base.key_open = '<CR>'
-  let g:FuzzyFinderOptions.Base.key_open_split = '<C-j>'
-  exe "FuzzyFinderTextMate"
-endfunction
-
-function IdeSplitFindTextMate()
-  let g:FuzzyFinderOptions.Base.key_open = '<C-j>'
-  let g:FuzzyFinderOptions.Base.key_open_split = '<CR>'
-  exe "FuzzyFinderTextMate"
-endfunction
-
-let mapleader = ","
-map <silent> <leader>e :call IdeFindTextMate()<CR>
-map <silent> <leader>s :call IdeSplitFindTextMate()<CR>
-
-" TagBar settings for Golang
-let g:tagbar_type_go = {
-  \ 'ctagstype' : 'go',
-  \ 'kinds'     : [
-    \ 'p:package',
-    \ 'i:imports:1',
-    \ 'c:constants',
-    \ 'v:variables',
-    \ 't:types',
-    \ 'n:interfaces',
-    \ 'w:fields',
-    \ 'e:embedded',
-    \ 'm:methods',
-    \ 'r:constructor',
-    \ 'f:functions'
-  \ ],
-  \ 'sro' : '.',
-  \ 'kind2scope' : {
-    \ 't' : 'ctype',
-    \ 'n' : 'ntype'
-  \ },
-  \ 'scope2kind' : {
-    \ 'ctype' : 't',
-    \ 'ntype' : 'n'
-  \ },
-  \ 'ctagsbin'  : 'gotags',
-  \ 'ctagsargs' : '-sort -silent'
-\ }
-
-" TagBar support for CoffeeScript
-if executable('coffeetags')
-  let g:tagbar_type_coffee = {
-    \ 'ctagsbin' : 'coffeetags',
-    \ 'ctagsargs' : '',
-    \ 'kinds' : [
-    \ 'f:functions',
-    \ 'o:object',
-    \ ],
-    \ 'sro' : ".",
-    \ 'kind2scope' : {
-    \ 'f' : 'object',
-    \ 'o' : 'object',
-    \ }
-  \ }
-endif
-
-" TagBar support for Javascript
-" let g:tagbar_type_javascript = {
-"     \ 'ctagsbin' : '/usr/local/bin/jsctags'
-" \ }
-
-" Golint implementation
-" To use it follow next steps:
-"   $ git clone git://github.com/golang/lint.git
-"   $ cd golint && go install
-function! s:GoLint()
-  cexpr system("golint " . shellescape(expand('%')))
-  copen
-endfunction
-command! GoLint :call s:GoLint()
 
 filetype plugin indent on
